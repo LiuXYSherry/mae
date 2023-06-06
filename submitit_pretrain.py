@@ -18,6 +18,7 @@ import submitit
 
 def parse_args():
     trainer_parser = trainer.get_args_parser()
+    # share all the args in trainer_parser
     parser = argparse.ArgumentParser("Submitit for MAE pretrain", parents=[trainer_parser])
     parser.add_argument("--ngpus", default=8, type=int, help="Number of gpus to request on each node")
     parser.add_argument("--nodes", default=2, type=int, help="Number of nodes to request")
