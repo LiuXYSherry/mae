@@ -163,6 +163,7 @@ def main(args):
 
     eff_batch_size = args.batch_size * args.accum_iter * misc.get_world_size()
     
+    # args.lr is about args.blr * 64 /256, which is 0.25 * args.blr
     if args.lr is None:  # only base_lr is specified
         args.lr = args.blr * eff_batch_size / 256
 
